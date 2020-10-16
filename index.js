@@ -1,8 +1,8 @@
 'use strict';
-const alfy = require('alfy');
-const algoliasearch = require('algoliasearch');
 const fs = require('fs');
 const https = require('https');
+const alfy = require('alfy');
+const algoliasearch = require('algoliasearch');
 
 const client = algoliasearch(
 	'0H4SMABBSG',
@@ -13,36 +13,36 @@ const index = client.initIndex('Post_production');
 function download(filename, url, callback) {
 	let file = fs.createWriteStream(filename);
 
-	https.get(url, function(response) {
-		 if (callback != undefined) {
-			 response.pipe(file).on('finish', () => {
-				 callback(file)
-			 })
-		 }
+	https.get(url, function (response) {
+		if (callback !== undefined) {
+			response.pipe(file).on('finish', () => {
+				callback(file);
+			});
+		}
 	});
-};
+}
 
 (async () => {
-	const { hits } = await index.search({
+	const {hits} = await index.search({
 		query: alfy.input,
 		hitsPerPage: 9
 	});
 
 	const results = hits.map(hit => {
-		const icon_path = `${__dirname}/assets/${hit.id}`;
+		const iconPath = `${__dirname}/assets/${hit.id}`;
 
 		const result = {
 			uid: hit.id,
 			title: hit.name,
-			subtitle: hit.vote_count+' votes · '+hit.comments_count+' comments · '+hit.tagline,
-			arg: 'https://producthunt.com'+hit.url,
+			subtitle: `${hit.vote_count} votes · ${hit.comments_count} comments · ${hit.tagline}`,
+			arg: `https://producthunt.com${hit.url}`,
 			icon: {
-				path: icon_path
+				path: iconPath
 			},
 			mods: {
 				cmd: {
 					arg: hit.product_links[0].url,
-					subtitle: hit.product_links[0].store_name+': '+hit.product_links[0].url
+					subtitle: `${hit.product_links[0].store_name}: ${hit.product_links[0].url}`
 				}
 			}
 		};
@@ -51,17 +51,17 @@ function download(filename, url, callback) {
 	});
 
 	hits.map(hit => {
-		const icon_path = `${__dirname}/assets/${hit.id}`;
-		const icon_url = `https://ph-files.imgix.net/${hit.thumbnail.image_uuid}?auto=format&fit=crop&h=128&w=128`
+		const iconPath = `${__dirname}/assets/${hit.id}`;
+		const iconUrl = `https://ph-files.imgix.net/${hit.thumbnail.image_uuid}?auto=format&fit=crop&h=128&w=128`;
 
-		fs.exists( icon_path, exists => {
+		fs.exists(iconPath, exists => {
 			if (!exists) {
-				download(icon_path, icon_url, () => {
-					return true
-				})
+				download(iconPath, iconUrl, () => {
+					return true;
+				});
 			}
 		});
-	})
+	});
 
 	alfy.output(results);
 })();
