@@ -20,9 +20,11 @@ const index = client.initIndex('Post_production');
 			title: hit.name,
 			subtitle: hit.vote_count+' votes · '+hit.comments_count+' comments · '+hit.tagline,
 			arg: 'https://producthunt.com'+hit.url,
-			cmd: {
-				arg: hit.product_links[0].url,
-				subtitle: hit.product_links[0].store_name+': '+hit.product_links[0].url
+			mods: {
+				cmd: {
+					arg: hit.product_links[0].url,
+					subtitle: hit.product_links[0].store_name+': '+hit.product_links[0].url
+				}
 			}
 		};
 
