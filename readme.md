@@ -11,7 +11,7 @@ _You will need [Alfred Powerpack](https://www.alfredapp.com/powerpack/) to enabl
 
 ## Usage
 
-1. In Alfred, type `hunt`, <kbd>Enter</kbd>, and your query. Results, including the title, thumbnail, and votes, will populate below.
+1. In Alfred, type `hunt` followed by your query. Results will populate below, including the title, thumbnail, votes, and tagline.
 2. Press <kbd>Return</kbd> to open the Product Hunt post for the selected result.
 3. Press <kbd>⌘</kbd> + <kbd>Return</kbd> to open the external link post for the selected result.
 4. Press <kbd>⌘</kbd> + <kbd>C</kbd> to copy the URL of the selected result to your clipboard.
