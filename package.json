@@ -1,19 +1,19 @@
 {
   "name": "alfred-producthunt-search",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Alfred search for producthunt",
   "license": "MIT",
   "repository": "nathangathright/alfred-producthunt-search",
   "author": {
     "name": "Nathan Gathright",
     "email": "nathan.gathright@gmail.com",
-    "url": "https://github.com/nathangathright/alfred-producthunt-search"
+    "url": "https://nathangathright.com"
   },
   "engines": {
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && ava",
+    "test": "xo",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
@@ -28,13 +28,10 @@
     "alfy"
   ],
   "dependencies": {
-    "alfy": "^0.6.0",
-    "algoliasearch": "^3.34.0",
-    "lodash": "^4.17.15"
+    "alfy": "^0.10.0",
+    "algoliasearch": "^3.34.0"
   },
   "devDependencies": {
-    "alfy-test": "^0.3.0",
-    "ava": "^0.18.0",
-    "xo": "^0.17.0"
+    "xo": "^0.33.1"
   }
 }

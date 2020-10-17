@@ -50,7 +50,7 @@ function download(filename, url, callback) {
 		return result;
 	});
 
-	hits.map(hit => {
+	hits.forEach(hit => {
 		const iconPath = `${__dirname}/assets/${hit.id}`;
 		const iconUrl = `https://ph-files.imgix.net/${hit.thumbnail.image_uuid}?auto=format&fit=crop&h=128&w=128`;
 
