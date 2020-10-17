@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.nathangathright.producthunt-search</string>
+	<string>com.nathangathright.alfred-producthunt-search</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -25,7 +25,7 @@
 	<key>createdby</key>
 	<string>Nathan Gathright</string>
 	<key>description</key>
-	<string>Search Suggestions for Product Hunt</string>
+	<string>Search Product Hunt posts from Alfred</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -66,7 +66,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string></string>
+				<string>Search Product Hunt posts from Alfred</string>
 				<key>title</key>
 				<string>Product Hunt</string>
 				<key>type</key>
@@ -102,7 +102,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Search Product Hunt posts from Alfred</string>
 	<key>uidata</key>
 	<dict>
 		<key>44FB2A8C-0259-49E9-B5EA-0421A790CF19</key>
@@ -123,7 +123,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/nathangathright/alfred-producthunt-search</string>
 </dict>

@@ -1,11 +1,11 @@
 # alfred-producthunt-search
 
-> Alfred search for producthunt
+> Search [Product Hunt](https://www.producthunt.com/) posts from Alfred
 
 ![screenshot](screenshot.jpg)
 
 ## Installation
-**<a download href="https://github.com/nathangathright/alfred-producthunt-search/releases/latest/download/alfred-producthunt-search.alfredworkflow">Download and install the latest release</a>** 
+**<a download href="https://github.com/nathangathright/alfred-producthunt-search/releases/latest/download/producthunt-search.alfredworkflow">Download and install the latest release</a>** 
 
 _You will need [Alfred Powerpack](https://www.alfredapp.com/powerpack/) to enable this workflow._
 
