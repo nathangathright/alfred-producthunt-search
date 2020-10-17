@@ -29,7 +29,7 @@ function download(filename, url, callback) {
 	});
 
 	const results = hits.map(hit => {
-		const iconPath = `${__dirname}/assets/${hit.id}`;
+		const iconPath = `${__dirname}/media/${hit.id}`;
 
 		const result = {
 			uid: hit.id,
@@ -51,7 +51,7 @@ function download(filename, url, callback) {
 	});
 
 	hits.forEach(hit => {
-		const iconPath = `${__dirname}/assets/${hit.id}`;
+		const iconPath = `${__dirname}/media/${hit.id}`;
 		const iconUrl = `https://ph-files.imgix.net/${hit.thumbnail.image_uuid}?auto=format&fit=crop&h=128&w=128`;
 
 		fs.exists(iconPath, exists => {
