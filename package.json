@@ -12,11 +12,6 @@
   "engines": {
     "node": ">=4"
   },
-  "scripts": {
-    "test": "xo",
-    "postinstall": "alfy-init",
-    "preuninstall": "alfy-cleanup"
-  },
   "files": [
     "index.js",
     "icon.png",
@@ -30,8 +25,5 @@
   "dependencies": {
     "alfy": "^0.10.0",
     "algoliasearch": "^3.34.0"
-  },
-  "devDependencies": {
-    "xo": "^0.33.1"
   }
 }
