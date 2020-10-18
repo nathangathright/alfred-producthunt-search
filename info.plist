@@ -29,7 +29,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>producthunt-search</string>
+	<string>Product Hunt Search</string>
 	<key>objects</key>
 	<array>
 		<dict>
