@@ -1,16 +1,28 @@
 'use strict';
+const path = require('path');
 const fs = require('fs');
 const https = require('https');
 const alfy = require('alfy');
 const algoliasearch = require('algoliasearch');
 
+let media = path.join(__dirname, 'media');
 const client = algoliasearch(
 	'0H4SMABBSG',
 	'9670d2d619b9d07859448d7628eea5f3'
 );
 const index = client.initIndex('Post_production');
 
+function ensureDirectoryExistence(filePath) {
+  var dirname = path.dirname(filePath);
+  if (fs.existsSync(dirname)) {
+    return true;
+  }
+  ensureDirectoryExistence(dirname);
+  fs.mkdirSync(dirname);
+}
+
 function download(filename, url, callback) {
+	ensureDirectoryExistence(filename)
 	let file = fs.createWriteStream(filename);
 
 	https.get(url, function (response) {
@@ -29,7 +41,7 @@ function download(filename, url, callback) {
 	});
 
 	const results = hits.map(hit => {
-		const iconPath = `${__dirname}/media/${hit.id}`;
+		const iconPath = path.join(media, `${hit.id}`);
 
 		const result = {
 			uid: hit.id,
@@ -51,7 +63,7 @@ function download(filename, url, callback) {
 	});
 
 	hits.forEach(hit => {
-		const iconPath = `${__dirname}/media/${hit.id}`;
+		const iconPath = path.join(media, `${hit.id}`);
 		const iconUrl = `https://ph-files.imgix.net/${hit.thumbnail.image_uuid}?auto=format&fit=crop&h=128&w=128`;
 
 		fs.exists(iconPath, exists => {
