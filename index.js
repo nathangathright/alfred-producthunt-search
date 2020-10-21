@@ -4,11 +4,19 @@ const fs = require('fs');
 const https = require('https');
 const alfy = require('alfy');
 const algoliasearch = require('algoliasearch');
+const { createInMemoryCache } = require('@algolia/cache-in-memory');
 
 let media = path.join(__dirname, 'media');
 const client = algoliasearch(
 	'0H4SMABBSG',
-	'9670d2d619b9d07859448d7628eea5f3'
+	'9670d2d619b9d07859448d7628eea5f3',
+	{
+		// Caches responses from Algolia
+		responsesCache: createInMemoryCache(), // or createNullCache()
+	
+		// Caches Promises with the same request payload
+		requestsCache: createInMemoryCache({ serializable: false }), // or createNullCache()
+	},
 );
 const index = client.initIndex('Post_production');
 

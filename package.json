@@ -21,6 +21,7 @@
     "alfy"
   ],
   "dependencies": {
+    "@algolia/cache-in-memory": "^4.5.1",
     "alfy": "^0.10.0",
     "algoliasearch": "^3.34.0",
     "dotenv": "^8.2.0"
