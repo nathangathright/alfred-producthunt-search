@@ -330,7 +330,8 @@ fi</string>
 	<key>readme</key>
 	<string>Search Product Hunt posts from Alfred
 
-Token is only needed for the `hunted` method, which is currently broken.</string>
+The developer token is only needed for the `hunted` method, which is currently broken.
+Locate yours by visiting https://api.producthunt.com/v2/docs and clicking “API Dashboard”</string>
 	<key>uidata</key>
 	<dict>
 		<key>1ACB45A9-A438-4781-8FD8-159A129D08ED</key>

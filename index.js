@@ -72,7 +72,7 @@ function download(filename, url, callback) {
 
 	hits.forEach(hit => {
 		const iconPath = path.join(media, `${hit.id}`);
-		const iconUrl = `https://ph-files.imgix.net/${hit.thumbnail.image_uuid}?auto=format&fit=crop&h=128&w=128`;
+		const iconUrl = `https://ph-files.imgix.net/${hit.thumbnail.image_uuid}?auto=format&fit=crop&h=120&w=120`;
 
 		fs.exists(iconPath, exists => {
 			if (!exists) {
