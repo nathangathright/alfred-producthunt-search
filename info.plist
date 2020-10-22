@@ -330,8 +330,8 @@ fi</string>
 	<key>readme</key>
 	<string>Search Product Hunt posts from Alfred
 
-The developer token is only needed for the `hunted` method, which is currently broken.
-Locate yours by visiting https://api.producthunt.com/v2/docs and clicking “API Dashboard”</string>
+The developer token is only needed for the `hunted` script.
+Locate your token by visiting https://api.producthunt.com/v2/docs and clicking “API Dashboard”</string>
 	<key>uidata</key>
 	<dict>
 		<key>1ACB45A9-A438-4781-8FD8-159A129D08ED</key>
@@ -391,7 +391,7 @@ Locate yours by visiting https://api.producthunt.com/v2/docs and clicking “API
 		<string>token</string>
 	</array>
 	<key>version</key>
-	<string>1.0.3</string>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/nathangathright/alfred-producthunt-search</string>
 </dict>
