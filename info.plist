@@ -21,6 +21,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3CBD529B-76EA-4039-B4D3-9EF96A227CE5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>50CCD26F-1371-40E4-968B-5BA716862854</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>44FB2A8C-0259-49E9-B5EA-0421A790CF19</key>
 		<array>
 			<dict>
@@ -48,6 +61,45 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>50CCD26F-1371-40E4-968B-5BA716862854</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>639B2005-978D-4ACB-815E-824289165C13</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EAB1A7C0-5357-494E-88F8-4A9D329CFE69</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EAB1A7C0-5357-494E-88F8-4A9D329CFE69</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
 				<string>1ACB45A9-A438-4781-8FD8-159A129D08ED</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -68,25 +120,6 @@
 	<string>Product Hunt Search</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>A394A7F5-251A-4629-908C-4552D988782B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -135,6 +168,25 @@
 			<string>44FB2A8C-0259-49E9-B5EA-0421A790CF19</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A394A7F5-251A-4629-908C-4552D988782B</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -230,6 +282,41 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>const frontmost_app_name = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
+const frontmost_app = Application(frontmost_app_name)
+
+const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
+const webkit_variants = ['Safari', 'Webkit']
+
+if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
+	frontmost_app.windows[0].activeTab.url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
+} else if (webkit_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
+	frontmost_app.documents[0].url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
+} else {
+  throw new Error('You need a supported browser as your frontmost app')
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -258,11 +345,11 @@ fi</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>80</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>8650752</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>F19</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -326,6 +413,112 @@ fi</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>EAB1A7C0-5357-494E-88F8-4A9D329CFE69</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>const frontmost_app_name = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
+const frontmost_app = Application(frontmost_app_name)
+
+const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
+const webkit_variants = ['Safari', 'Webkit']
+
+if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
+  frontmost_app.windows[0].activeTab.url()
+} else if (webkit_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
+  frontmost_app.documents[0].url()
+} else {
+  throw new Error('You need a supported browser as your frontmost app')
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>50CCD26F-1371-40E4-968B-5BA716862854</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>79</integer>
+				<key>hotmod</key>
+				<integer>8650752</integer>
+				<key>hotstring</key>
+				<string>F18</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>3CBD529B-76EA-4039-B4D3-9EF96A227CE5</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>639B2005-978D-4ACB-815E-824289165C13</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Search Product Hunt posts from Alfred
@@ -337,16 +530,23 @@ Locate your token by visiting https://api.producthunt.com/v2/docs and clicking â
 		<key>1ACB45A9-A438-4781-8FD8-159A129D08ED</key>
 		<dict>
 			<key>xpos</key>
-			<integer>155</integer>
+			<integer>395</integer>
 			<key>ypos</key>
 			<integer>365</integer>
 		</dict>
 		<key>202291B7-BB85-47EE-8720-A53A39F38EF6</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>550</integer>
 			<key>ypos</key>
 			<integer>365</integer>
+		</dict>
+		<key>3CBD529B-76EA-4039-B4D3-9EF96A227CE5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>15</integer>
+			<key>ypos</key>
+			<integer>590</integer>
 		</dict>
 		<key>44FB2A8C-0259-49E9-B5EA-0421A790CF19</key>
 		<dict>
@@ -362,12 +562,40 @@ Locate your token by visiting https://api.producthunt.com/v2/docs and clicking â
 			<key>ypos</key>
 			<integer>365</integer>
 		</dict>
+		<key>50CCD26F-1371-40E4-968B-5BA716862854</key>
+		<dict>
+			<key>xpos</key>
+			<integer>160</integer>
+			<key>ypos</key>
+			<integer>590</integer>
+		</dict>
+		<key>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>160</integer>
+			<key>ypos</key>
+			<integer>365</integer>
+		</dict>
+		<key>639B2005-978D-4ACB-815E-824289165C13</key>
+		<dict>
+			<key>xpos</key>
+			<integer>460</integer>
+			<key>ypos</key>
+			<integer>590</integer>
+		</dict>
 		<key>A394A7F5-251A-4629-908C-4552D988782B</key>
 		<dict>
 			<key>xpos</key>
 			<integer>150</integer>
 			<key>ypos</key>
 			<integer>10</integer>
+		</dict>
+		<key>EAB1A7C0-5357-494E-88F8-4A9D329CFE69</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>395</integer>
 		</dict>
 		<key>F1891F9A-FA8A-42C0-B58C-2F9A9059FD1C</key>
 		<dict>
