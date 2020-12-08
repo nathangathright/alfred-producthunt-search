@@ -5,27 +5,14 @@
 	<key>bundleid</key>
 	<string>com.nathangathright.alfred-producthunt-search</string>
 	<key>category</key>
-	<string>Productivity</string>
+	<string>Search Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>1ACB45A9-A438-4781-8FD8-159A129D08ED</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>202291B7-BB85-47EE-8720-A53A39F38EF6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>3CBD529B-76EA-4039-B4D3-9EF96A227CE5</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>50CCD26F-1371-40E4-968B-5BA716862854</string>
+				<string>A394A7F5-251A-4629-908C-4552D988782B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -38,7 +25,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A394A7F5-251A-4629-908C-4552D988782B</string>
+				<string>F1891F9A-FA8A-42C0-B58C-2F9A9059FD1C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -48,7 +35,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>F1891F9A-FA8A-42C0-B58C-2F9A9059FD1C</string>
+				<string>A394A7F5-251A-4629-908C-4552D988782B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -62,19 +49,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>50CCD26F-1371-40E4-968B-5BA716862854</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>639B2005-978D-4ACB-815E-824289165C13</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -109,6 +83,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>EBE7DFF6-DC71-4B17-BDED-95B822971F40</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Nathan Gathright</string>
@@ -123,74 +110,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>hunt</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>Searching...</string>
-				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>index.js</string>
-				<key>subtext</key>
-				<string>Search Product Hunt posts from Alfred</string>
-				<key>title</key>
-				<string>Product Hunt</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>44FB2A8C-0259-49E9-B5EA-0421A790CF19</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>A394A7F5-251A-4629-908C-4552D988782B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -200,7 +119,7 @@
 readonly remote_info_plist=''
 readonly workflow_url='nathangathright/alfred-producthunt-search'
 readonly download_type='github_release'
-readonly frequency_check='0'
+readonly frequency_check='10'
 
 # FROM HERE ON, CODE SHOULD BE LEFT UNTOUCHED!
 function abort {
@@ -282,37 +201,51 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
 				<key>escaping</key>
-				<integer>68</integer>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>hunt</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
 				<key>script</key>
-				<string>const frontmost_app_name = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
-const frontmost_app = Application(frontmost_app_name)
-
-const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
-const webkit_variants = ['Safari', 'Webkit']
-
-if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
-	frontmost_app.windows[0].activeTab.url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
-} else if (webkit_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
-	frontmost_app.documents[0].url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
-} else {
-  throw new Error('You need a supported browser as your frontmost app')
-}</string>
+				<string>./node_modules/.bin/run-node index.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>index.js</string>
+				<key>subtext</key>
+				<string>Search Product Hunt posts from Alfred</string>
+				<key>title</key>
+				<string>Product Hunt</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</string>
+			<string>44FB2A8C-0259-49E9-B5EA-0421A790CF19</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -329,9 +262,50 @@ if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>202291B7-BB85-47EE-8720-A53A39F38EF6</string>
+			<string>A394A7F5-251A-4629-908C-4552D988782B</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>4</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>H</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>com.brave.Browser</string>
+					<string>org.mozilla.firefox</string>
+					<string>com.google.Chrome</string>
+					<string>com.apple.Safari</string>
+					<string>org.chromium.Chromium</string>
+					<string>com.apple.SafariTechnologyPreview</string>
+					<string>com.vivaldi.Vivaldi</string>
+				</array>
+				<key>relatedAppsMode</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>EBE7DFF6-DC71-4B17-BDED-95B822971F40</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -416,77 +390,6 @@ if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.transform</string>
-			<key>uid</key>
-			<string>EAB1A7C0-5357-494E-88F8-4A9D329CFE69</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}</string>
-				<key>textcolor</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>639B2005-978D-4ACB-815E-824289165C13</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>79</integer>
-				<key>hotmod</key>
-				<integer>8650752</integer>
-				<key>hotstring</key>
-				<string>F18</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>3CBD529B-76EA-4039-B4D3-9EF96A227CE5</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -499,9 +402,9 @@ const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Bra
 const webkit_variants = ['Safari', 'Webkit']
 
 if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
-  frontmost_app.windows[0].activeTab.url()
+	frontmost_app.windows[0].activeTab.url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
 } else if (webkit_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
-  frontmost_app.documents[0].url()
+	frontmost_app.documents[0].url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
 } else {
   throw new Error('You need a supported browser as your frontmost app')
 }</string>
@@ -515,9 +418,22 @@ if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>50CCD26F-1371-40E4-968B-5BA716862854</string>
+			<string>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>EAB1A7C0-5357-494E-88F8-4A9D329CFE69</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -530,72 +446,51 @@ Locate your token by visiting https://api.producthunt.com/v2/docs and clicking â
 		<key>1ACB45A9-A438-4781-8FD8-159A129D08ED</key>
 		<dict>
 			<key>xpos</key>
-			<integer>395</integer>
+			<integer>475</integer>
 			<key>ypos</key>
-			<integer>365</integer>
-		</dict>
-		<key>202291B7-BB85-47EE-8720-A53A39F38EF6</key>
-		<dict>
-			<key>xpos</key>
-			<integer>550</integer>
-			<key>ypos</key>
-			<integer>365</integer>
-		</dict>
-		<key>3CBD529B-76EA-4039-B4D3-9EF96A227CE5</key>
-		<dict>
-			<key>xpos</key>
-			<integer>15</integer>
-			<key>ypos</key>
-			<integer>590</integer>
+			<integer>300</integer>
 		</dict>
 		<key>44FB2A8C-0259-49E9-B5EA-0421A790CF19</key>
 		<dict>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>475</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>145</integer>
 		</dict>
 		<key>4DFCC120-1209-4FD6-8198-02FCEC1F8FDA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>365</integer>
-		</dict>
-		<key>50CCD26F-1371-40E4-968B-5BA716862854</key>
-		<dict>
-			<key>xpos</key>
-			<integer>160</integer>
-			<key>ypos</key>
-			<integer>590</integer>
+			<integer>300</integer>
 		</dict>
 		<key>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>160</integer>
+			<integer>235</integer>
 			<key>ypos</key>
-			<integer>365</integer>
-		</dict>
-		<key>639B2005-978D-4ACB-815E-824289165C13</key>
-		<dict>
-			<key>xpos</key>
-			<integer>460</integer>
-			<key>ypos</key>
-			<integer>590</integer>
+			<integer>300</integer>
 		</dict>
 		<key>A394A7F5-251A-4629-908C-4552D988782B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>150</integer>
+			<integer>720</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>145</integer>
 		</dict>
 		<key>EAB1A7C0-5357-494E-88F8-4A9D329CFE69</key>
 		<dict>
 			<key>xpos</key>
-			<integer>320</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>395</integer>
+			<integer>330</integer>
+		</dict>
+		<key>EBE7DFF6-DC71-4B17-BDED-95B822971F40</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>155</integer>
 		</dict>
 		<key>F1891F9A-FA8A-42C0-B58C-2F9A9059FD1C</key>
 		<dict>
@@ -604,9 +499,9 @@ Locate your token by visiting https://api.producthunt.com/v2/docs and clicking â
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>155</integer>
+			<integer>720</integer>
 			<key>ypos</key>
-			<integer>140</integer>
+			<integer>10</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -619,7 +514,7 @@ Locate your token by visiting https://api.producthunt.com/v2/docs and clicking â
 		<string>token</string>
 	</array>
 	<key>version</key>
-	<string>1.2.0</string>
+	<string>1.2.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/nathangathright/alfred-producthunt-search</string>
 </dict>
