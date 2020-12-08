@@ -21,7 +21,7 @@ Type the keyword `hunted` and enter a URL to check if it’s already been submit
   - If the URL is found on Product Hunt, press <kbd>Return</kbd> to open the Product Hunt post.
   - If the URL is not found on Product Hunt, press <kbd>Return</kbd> to open the Product Hunt submission page.
 
-Alternatively, press <kbd>⌃</kbd> + <kbd>F19</kbd> to launch this script using the content of the clipboard as the query.
+Alternatively, set up a hotkey in Alfred to pre-populate the `hunted` URL from your frontmost browser window.
 
 ## Credits
 - Hat tip to [Chris Messina](https://twitter.com/chrismessina) for the nudge to create this
