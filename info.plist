@@ -310,6 +310,41 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>const frontmost_app_name = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
+const frontmost_app = Application(frontmost_app_name)
+
+const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
+const webkit_variants = ['Safari', 'Webkit']
+
+if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
+	frontmost_app.windows[0].activeTab.url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
+} else if (webkit_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
+	frontmost_app.documents[0].url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
+} else {
+  throw new Error('You need a supported browser as your frontmost app')
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -386,41 +421,6 @@ fi</string>
 			<string>1ACB45A9-A438-4781-8FD8-159A129D08ED</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>const frontmost_app_name = Application('System Events').applicationProcesses.where({ frontmost: true }).name()[0]
-const frontmost_app = Application(frontmost_app_name)
-
-const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Brave Browser', 'Microsoft Edge']
-const webkit_variants = ['Safari', 'Webkit']
-
-if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
-	frontmost_app.windows[0].activeTab.url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
-} else if (webkit_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
-	frontmost_app.documents[0].url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
-} else {
-  throw new Error('You need a supported browser as your frontmost app')
-}</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>7</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>59CF48B3-C2CF-4C58-9DD3-7C97FBA6319B</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -514,7 +514,7 @@ Locate your token by visiting https://api.producthunt.com/v2/docs and clicking â
 		<string>token</string>
 	</array>
 	<key>version</key>
-	<string>1.2.1</string>
+	<string>1.2.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/nathangathright/alfred-producthunt-search</string>
 </dict>
