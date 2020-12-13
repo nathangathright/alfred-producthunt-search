@@ -7,7 +7,7 @@ const isUrl = require('is-url-superb');
 const normalizeUrl = require('normalize-url');
 
 const media = path.join(__dirname, 'media');
-const token = alfy.config.get('token') || process.env.TOKEN;
+const token = process.env.token;
 const input = isUrl(normalizeUrl(alfy.input)) ? normalizeUrl(alfy.input) : '';
 const query = `query { posts(url: "${input}", order: VOTES) {
   edges{
