@@ -3,11 +3,12 @@ const path = require('path');
 const fs = require('fs');
 const https = require('https');
 const alfy = require('alfy');
+const isUrl = require('is-url-superb');
 const normalizeUrl = require('normalize-url');
 
 const media = path.join(__dirname, 'media');
-const token = alfy.config.get('token') || process.env.TOKEN;
-const input = normalizeUrl(alfy.input);
+const token = process.env.token;
+const input = isUrl(normalizeUrl(alfy.input)) ? normalizeUrl(alfy.input) : '';
 const query = `query { posts(url: "${input}", order: VOTES) {
   edges{
     node{
@@ -45,56 +46,63 @@ if (!token) {
   return alfy.error(new Error(`Please add a Product Hunt token as a variable`));
 }
 
-alfy
-  .fetch('https://api.producthunt.com/v2/api/graphql', {
-    method: 'POST',
-    json: true,
-    headers: {
-      "Authorization": `Bearer ${token}`,
-      "Content-Type": "application/json"
-    },
-    body: { query }
-  })
-  .then((json) => {
-    const data = json.data;
-    const edges = data.posts.edges;
-    const hasResults = (Array.isArray(edges) && edges.length)
+if (input){
+  alfy
+    .fetch('https://api.producthunt.com/v2/api/graphql', {
+      method: 'POST',
+      json: true,
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json"
+      },
+      body: { query }
+    })
+    .then((json) => {
+      const data = json.data;
+      const edges = data.posts.edges;
+      const hasResults = (Array.isArray(edges) && edges.length)
 
-    if (!data) {
-      return alfy.log(json.errors ? json.errors : 'Unknown GraphQL Error');
-    }
+      if (!data) {
+        return alfy.log(json.errors ? json.errors : 'Unknown GraphQL Error');
+      }
 
-    const noResults = [{
-      title: 'Looks like this URL hasn’t been hunted!',
-      subtitle: 'Submit to Product Hunt',
-      arg: 'https://www.producthunt.com/posts/new'
-    }];
+      const noResults = [{
+        title: 'Looks like this URL hasn’t been hunted!',
+        subtitle: 'Submit to Product Hunt',
+        arg: 'https://www.producthunt.com/posts/new'
+      }];
 
-    const results = edges.map(({node}) => {
-      const iconPath = path.join(media, `${node.id}`);
+      const results = edges.map(({node}) => {
+        const iconPath = path.join(media, `${node.id}`);
 
-      fs.exists(iconPath, exists => {
-        if (!exists) {
-          download(iconPath, node.thumbnail.url, () => {
-            return true;
-          });
-        }
+        fs.exists(iconPath, exists => {
+          if (!exists) {
+            download(iconPath, node.thumbnail.url, () => {
+              return true;
+            });
+          }
+        });
+
+        return {
+          title: 'This URL has already been hunted!',
+          subtitle: `Open ${node.name} on Product Hunt`,
+          arg: node.url,
+          icon: {
+            path: iconPath
+          },
+        };
       });
 
-      return {
-        title: 'This URL has already been hunted!',
-        subtitle: `Open ${node.name} on Product Hunt`,
-        arg: node.url,
-        icon: {
-          path: iconPath
-        },
-      };
+      if (hasResults) {
+        alfy.output(results)
+      }
+      else{
+        alfy.output(noResults)
+      }
     });
-
-    if (hasResults) {
-      alfy.output(results)
-    }
-    else{
-      alfy.output(noResults)
-    }
-  });
+}
+else {
+  alfy.output([{
+    title: 'Please enter a valid URL'
+  }])
+}
