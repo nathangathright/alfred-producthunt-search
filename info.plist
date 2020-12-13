@@ -514,7 +514,7 @@ Locate your token by visiting https://api.producthunt.com/v2/docs and clicking â
 		<string>token</string>
 	</array>
 	<key>version</key>
-	<string>1.2.2</string>
+	<string>1.2.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/nathangathright/alfred-producthunt-search</string>
 </dict>
