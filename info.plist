@@ -234,7 +234,7 @@ fi</string>
 				<key>subtext</key>
 				<string>Search Product Hunt posts from Alfred</string>
 				<key>title</key>
-				<string>Product Hunt</string>
+				<string>Search Product Hunt for {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
