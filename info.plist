@@ -322,9 +322,9 @@ const chromium_variants = ['Google Chrome', 'Chromium', 'Opera', 'Vivaldi', 'Bra
 const webkit_variants = ['Safari', 'Webkit']
 
 if (chromium_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
-	frontmost_app.windows[0].activeTab.url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
+	frontmost_app.windows[0].activeTab.url()
 } else if (webkit_variants.some(app_name =&gt; frontmost_app_name.startsWith(app_name))) {
-	frontmost_app.documents[0].url().replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0]
+	frontmost_app.documents[0].url()
 } else {
   throw new Error('You need a supported browser as your frontmost app')
 }</string>
@@ -514,7 +514,7 @@ Locate your token by visiting https://api.producthunt.com/v2/docs and clicking â
 		<string>token</string>
 	</array>
 	<key>version</key>
-	<string>1.2.3</string>
+	<string>1.2.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/nathangathright/alfred-producthunt-search</string>
 </dict>
